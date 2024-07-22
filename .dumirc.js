@@ -1,6 +1,6 @@
 import { defineConfig } from 'dumi';
 
-const REPO_NAME = 'eazy-watermark'
+const REPO_NAME = 'yz-watermark'
 
 export default defineConfig({
   title: REPO_NAME,
@@ -12,7 +12,7 @@ export default defineConfig({
     null,
     {
       title: 'GitHub',
-      path: 'https://github.com/jobsofferings/eazy-watermark',
+      path: 'https://github.com/NYU-ZYJCS/yz-watermask',
     },
   ],
 });
