@@ -1,0 +1,69 @@
+{
+  "name": "eazy-watermark",
+  "version": "1.0.0",
+  "description": "Eazy Watermark: A watermark tool for browser",
+  "author": "jobsofferings",
+  "repository": "https://github.com/jobsofferings/eazy-watermark",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "homepage": "https://github.com/jobsofferings/eazy-watermark",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rm -rf lib && tsc -p ./tsconfig.build.json",
+    "start": "dumi dev",
+    "test": "jest",
+    "docs:build": "dumi build --config .dumirc.js",
+    "test-coverage": "jest --collectCoverage",
+    "preversion": "npm run format && npm run lint && npm run test",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags",
+    "format": "prettier --write --parser typescript \"src/**/*.ts\"",
+    "lint": "eslint --ext .ts src",
+    "deploy": "gh-pages -d dist"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint",
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "keywords": [
+    "watermark",
+    "typescript",
+    "browser"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/config": "0.0.41",
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.14",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "@types/react": "17.0.43",
+    "@umijs/fabric": "^2.8.1",
+    "@umijs/plugin-esbuild": "^1.4.1",
+    "@umijs/test": "^3.0.5",
+    "antd": "^4.21.7",
+    "react": "16.14.0",
+    "react-dom": "^16.13.1",
+    "dumi": "^1.1.38",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "father-build": "^1.17.2",
+    "gh-pages": "^6.0.0",
+    "husky": "^4.3.0",
+    "jest": "^26.1.0",
+    "jest-canvas-mock": "^2.5.2",
+    "lint-staged": "^10.5.1",
+    "nodemon": "^3.0.1",
+    "prettier": "^2.6.1",
+    "typescript": "^4.6.2"
+  }
+}
